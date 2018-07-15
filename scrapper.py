@@ -13,7 +13,31 @@ soup = BeautifulSoup(source, 'lxml')
 
 ### Grab material icons
 
-lists = soup.find('li')
+body = soup.find('body')
+dashboard_cards = body.find('div', class_='dashboard-cards').p.text
+print(dashboard_cards)
 
-icons = lists.i
-print(icons)
+
+### Parse youtube link example
+
+vid_src = article.find('iframe', class_ = 'youtube-player')['src']
+print(vid_src)
+
+vid_id = vid_src.split('/')[4]
+vid_id = vid_id.split('?')[0]
+print(vid_id)
+
+yt_link = f'https://youtube.com/watch?v={vid_id}'
+
+for article in soup.find_all('article'):
+    vid_src = article.find('iframe', class_ = 'youtube-player')['src']
+    print(vid_src)
+    
+    vid_id = vid_src.split('/')[4]
+    vid_id = vid_id.split('?')[0]
+    print(vid_id)
+    
+    yt_link = f'https://youtube.com/watch?v={vid_id}'
+    print(yt_link)
+    
+    print()
