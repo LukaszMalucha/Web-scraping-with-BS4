@@ -31,7 +31,27 @@ provider = provider.split('<')[0]
 print(provider)
  
 # Award:
-award = 
+award = body_div.find('div', class_="col-md-5").p
+award = str(award).split('</strong>')[1]
+award = award.split('<')[0]
+print(award)
+
+# ECTS credits:
+credits = body_div.find('div', class_="col-md-3")
+credits = str(credits).split('</strong> ')[1]
+credits = credits.split('<')[0]
+print(credits)
+
+# Mode:
+second_row = body_div.find_all('div', "row")[2]
+mode = second_row.find('div', class_="col-md-5")
+print(mode)
+
+
+
+
+
+
 
 
 
