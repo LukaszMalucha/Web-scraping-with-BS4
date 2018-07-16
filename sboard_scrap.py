@@ -76,23 +76,23 @@ for course_div in soup.find_all('div', class_="panel panel-primary"):
         deadline = second_row.find('div', class_="col-md-4")
         deadline = str(deadline).split('</strong>')[1]
         deadline = deadline.split('<')[0]
-        deadline = datetime.datetime.strptime(deadline, datetime_format)
-        deadline = deadline.date()
+        # deadline = datetime.datetime.strptime(deadline, datetime_format)
+        # deadline = deadline.date()
         
         # Start Date
         start_date = second_row.find('div', class_="col-md-3")
         start_date = str(start_date).split('</strong>')[1]
         start_date = start_date.split('<')[0]
-        start_date = datetime.datetime.strptime(start_date, datetime_format)
-        start_date = start_date.date()
+        # start_date = datetime.datetime.strptime(start_date, datetime_format)
+        # start_date = start_date.date()
         
         # End Date
         end_date = second_row.find('div', class_="col-md-3")
         end_date = str(end_date).split('</strong>')[2]
         end_date = end_date.replace(" ", "")
         end_date = end_date.split('<')[0]
-        end_date = datetime.datetime.strptime(end_date, datetime_format)
-        end_date = end_date.date()
+        # end_date = datetime.datetime.strptime(end_date, datetime_format)
+        # end_date = end_date.date()
         
         #### BOTTOM ROW ####################
 
@@ -112,7 +112,7 @@ for course_div in soup.find_all('div', class_="panel panel-primary"):
         skill_list = third_row.find('div', class_="col-md-3")
         skill_list = str(skill_list).split('</strong>')[1]
         skill_list = skill_list.split('<')[0]
-        skill_list = my_tokenizer(skill_list)
+        # skill_list = my_tokenizer(skill_list)
         
         ##### LINK ##############################
         link = course_div.find('a')
@@ -153,6 +153,6 @@ for course_div in soup.find_all('div', class_="panel panel-primary"):
     csv_writer.writerow([ title_div ,  provider ,  award ,  credits ,  mode ,  deadline ,  start_date ,  end_date ,  nfq ,  ote_flag ,  skill_list ,  link ])
     
 
-csv_writer.close()    
+csv_file.close()    
 
 
