@@ -21,7 +21,11 @@ pip install requests<br>
 pip freeze --local > requirements.txt
 
 
-### Task # 
+### Task #1 
 
-Scrape single springboardcourses.ie result webpage
+Scrape single springboardcourses.ie result webpage 
+
+### Task #2
+
+Clean dataset for future ML tasks
 

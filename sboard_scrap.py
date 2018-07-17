@@ -112,7 +112,7 @@ for course_div in soup.find_all('div', class_="panel panel-primary"):
         skill_list = third_row.find('div', class_="col-md-3")
         skill_list = str(skill_list).split('</strong>')[1]
         skill_list = skill_list.split('<')[0]
-        # skill_list = my_tokenizer(skill_list)
+        skill_list = my_tokenizer(skill_list)
         
         ##### LINK ##############################
         link = course_div.find('a')
